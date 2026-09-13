@@ -209,7 +209,12 @@ install_node() { # <dir> <repo> <sha>
         git -C "$dir" checkout -q -f "$sha"
     else
         log "$1: pinned at ${sha:0:12}"
+        # A fresh --no-checkout clone can already have HEAD == sha while its
+        # working tree is empty. Checkout even then (also repairs older installs).
+        # Do not force this path: warm boots must preserve existing local edits.
+        git -C "$dir" checkout -q "$sha"
     fi
+    [ -f "$dir/__init__.py" ] || die "$1: checkout is missing __init__.py"
     if [ -f "$dir/requirements.txt" ]; then pipi -r "$dir/requirements.txt"; fi
 }
 
