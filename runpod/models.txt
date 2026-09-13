@@ -1,0 +1,10 @@
+# Triple Max model manifest — consumed by runpod/provision.sh
+# Format:  url|dest (relative to ComfyUI/models)|min_bytes
+# min_bytes is an offline lower bound (~2% under the real size); the script also
+# checks the exact size against Hugging Face when online. Lines starting with # are ignored.
+https://huggingface.co/smhfacct/Minimax-H3-fl2va-ref2va-hybrid-models/resolve/main/minimax_h3_hybrid_fl2va_ref2va_b20-49-int8.safetensors|diffusion_models/minimax_h3_hybrid_fl2va_ref2va_b20-49-int8.safetensors|20500000000
+https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors|text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors|15300000000
+https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_fp16.safetensors|vae/minimax_h3_video_vae_fp16.safetensors|5100000000
+https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors|vae/minimax_h3_audio_vae_fp32.safetensors|590000000
+https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors|loras/minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors|1900000000
+https://huggingface.co/LBH-123-AI/Minimax_h3_latent_Upscaler/resolve/main/minimax_h3_latent_upscaler_3d_fp16.safetensors|latent_upscale_models/minimax_h3_latent_upscaler_3d_fp16.safetensors|660000000
